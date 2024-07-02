@@ -7,6 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form-control {
+  margin-bottom: 0.4rem;
+}
+
+
 .custom-card {
   background-color: #282c34;
   color: white; 
@@ -28,10 +37,12 @@ code {
 
 button {
   border-radius: 10px;
+  margin-bottom: 0.3rem;
 }
 
 header {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: white;
-  background-color: darkcyan;
+  background-color: #282c34;
   font-size: 5rem;
 }
