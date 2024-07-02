@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import TrendingMovies from './components/TrendingMovies';
 import PlayingNow from './components/PlayingNow';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
         <SearchBar />
         <TrendingMovies />
         <PlayingNow />
+        <Footer />
       </div>
     );
   }

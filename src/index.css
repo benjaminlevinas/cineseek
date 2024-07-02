@@ -8,8 +8,10 @@ body {
 }
 
 * {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-seri
 }
+
+
 
 .form-control {
   margin-bottom: 0.4rem;
@@ -39,6 +41,15 @@ button {
   border-radius: 10px;
   margin-bottom: 0.3rem;
 }
+
+
+
+footer {
+  margin-top: 5rem;
+  text-align: left;
+  
+}
+
 
 header {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
