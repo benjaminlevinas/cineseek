@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
+//creates a functional component for the Playing in Cinemas button
 function PlayingNow() {
+    //initializes state, once for the button that shows the results and one for the button that hides it
     const [data, setData] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
+    //creates an asynchronous function that fetches api data, parses it, and uses setData to set it to the state 
     async function getPlayingNow() {
         fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=')
             .then(response => response.json())
@@ -12,9 +15,12 @@ function PlayingNow() {
             .catch(error => console.error(error));
     }
 
+    //this function will handle the removing of the results with the hide button by changing the true/false value state of showResults
      function resultsOn() {
         setShowResults(!showResults);
     }
+
+    //returns two buttons and the cards
     return (
         <div>
         <button onClick={getPlayingNow} className='btn btn-success btn-lg'>What's Currently Playing in Cinemas?</button>

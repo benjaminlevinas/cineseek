@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
+//creates a functional component for the search bar
 function SearchBar() {
+    //initializes state for the query the user types in, the movies in the result, and the button that will hide the results
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
-    const [showResults, setShowResults] = useState(false); // Initially hide results
+    const [showResults, setShowResults] = useState(false); 
 
+    //creates a submit form function that fetches the api results, parses it, changes the showResults value 
     function submitForm(e) {
         e.preventDefault();
 
@@ -19,10 +22,12 @@ function SearchBar() {
             });
     }
 
+    //this function changes the state of the showResults so we can control if the results show or not
     function resultsOn() {
         setShowResults(!showResults); 
     }
 
+    //return a div with the results
     return (
         <div className='container-fluid w-100'>
             <form onSubmit={submitForm} className='form'>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
+//creates a functional component to show trending movies and sets state for the data to be displayed as well as the showResults state, which will allow us to control whether the results show or not
 function TrendingMovies() {
     const [data, setData] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
+    //this function fetches results from the api and will be called when we press the button to show trending movies
     async function getTrendingMovies() {
         fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=')
             .then(response => response.json())
@@ -12,10 +14,12 @@ function TrendingMovies() {
             .catch(error => console.error(error));
     }
 
+    //this function changes the value of showResults, which is the logic that will help us hide and show the results via our two buttons
     function resultsOn() {
         setShowResults(!showResults);
     }
 
+    //returns the two buttons (one only shows if showResults is true, in other words, if there are results being displayed) and maps the results to a div
     return (
         <div>
         <button onClick={getTrendingMovies} className='btn btn-success btn-lg'>See Trending Movies</button>
