@@ -7,7 +7,7 @@ function TrendingMovies() {
 
     //this function fetches results from the api and will be called when we press the button to show trending movies
     async function getTrendingMovies() {
-        fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=')
+        fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${process.env.REACT_APP_API_KEY}`)
             .then(response => response.json())
             .then(result => {setData(result.results) 
                             setShowResults(true)})

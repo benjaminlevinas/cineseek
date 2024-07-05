@@ -6,12 +6,14 @@ function SearchBar() {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
     const [showResults, setShowResults] = useState(false); 
+   
+
 
     //creates a submit form function that fetches the api results, parses it, changes the showResults value 
     function submitForm(e) {
         e.preventDefault();
 
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=&language=en-US&query=${query}&page=1`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1`)
             .then(response => response.json())
             .then(result => {
                 setMovies(result.results);

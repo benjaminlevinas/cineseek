@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 
+
 //creates a functional component for the Playing in Cinemas button
 function PlayingNow() {
     //initializes state, once for the button that shows the results and one for the button that hides it
     const [data, setData] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
+
+
     //creates an asynchronous function that fetches api data, parses it, and uses setData to set it to the state 
     async function getPlayingNow() {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=')
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${process.env.REACT_APP_API_KEY}`)
             .then(response => response.json())
             .then(result => {setData(result.results) 
                 setShowResults(true)})
